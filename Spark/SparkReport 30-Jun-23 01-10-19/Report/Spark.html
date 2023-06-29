@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary"></span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Jun 16, 2023 12:45:07 AM</span></a>
+<a href="#"><span class="badge badge-primary">Jun 30, 2023 01:10:19 AM</span></a>
 </li>
 </ul>
 </div>
@@ -66,13 +66,13 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Jun 16, 2023 12:45:07 AM</h3>
+<h3>Jun 30, 2023 01:10:19 AM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Jun 16, 2023 12:45:16 AM</h3>
+<h3>Jun 30, 2023 01:10:30 AM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -143,7 +143,7 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>3</b> steps passed</small></div>
+<div><small data-tooltip='100%'><b>8</b> steps passed</small></div>
 <div>
 <small data-tooltip='0%'><b>0</b> steps failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
@@ -162,7 +162,7 @@
 </div></div>
 <script>
 var timeline = {
-"Google Functionality":7.311
+"Opencart main page validations.":9.32
 };
 </script>
 <div class="row">
@@ -172,7 +172,7 @@ var timeline = {
 <div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
 <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
 <tr>
-<td>@test</td>
+<td>@opencart</td>
 <td>1</td>
 <td>0</td>
 <td>0</td>
@@ -221,7 +221,7 @@ warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 3,
+passGrandChild: 8,
 failGrandChild: 0,
 warningGrandChild: 0,
 skipGrandChild: 0,
@@ -246,7 +246,7 @@ eventsCount: 5,
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
 <ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" href="#">@test</a>
+<a class="dropdown-item" href="#">@opencart</a>
 </ul>
 </li>
 </ul>
@@ -257,9 +257,9 @@ eventsCount: 5,
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">Google Functionality</p>
+            <p class="name">Opencart main page validations.</p>
             <p class="text-sm">
-              <span>12:45:08 AM</span> / <span>00:00:07:311</span>
+              <span>1:10:21 AM</span> / <span>00:00:09:320</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -267,10 +267,10 @@ eventsCount: 5,
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">Google Functionality</h5>
-<span class='badge badge-success'>06.16.2023 12:45:08 AM</span>
-<span class='badge badge-danger'>06.16.2023 12:45:16 AM</span>
-<span class='badge badge-default'>00:00:07:311</span>
+<h5 class="test-status text-pass">Opencart main page validations.</h5>
+<span class='badge badge-success'>06.30.2023 1:10:21 AM</span>
+<span class='badge badge-danger'>06.30.2023 1:10:30 AM</span>
+<span class='badge badge-default'>00:00:09:320</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -282,35 +282,58 @@ eventsCount: 5,
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Google search</div>
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Validate Login in open cart</div>
       </div>
     </div>
         <div class="scenario_outline collapse">
             <div class="card-body l1">
               <div class="card-header">
                 <div class="card-title outline-child">
-                  <div class="node" id="3"><span class="badge log pass-bg mr-2">Pass</span>Google search</div>
+                  <div class="node" id="3"><span class="badge log pass-bg mr-2">Pass</span>Validate Login in open cart</div>
                 </div>
               </div>
               <div class="card-body mt-3 collapse">
                   <div class="step pass-bg">
-                    <span>com.pkg.Hooks.hooks.before()</span>
+                    <span>comm.runner.Hooks.before()</span>
       <div>Chrome browser opened
       </div>
       <div>
       </div>
                   </div>
                   <div class="step pass-bg">
-                    <span>Given User launches "https://www.google.com"</span>
-      <div>https://www.google.com is opened
+                    <span>Given User launches "https://demo.opencart.com"</span>
+      <div>https://demo.opencart.com is opened
       </div>
       <div>
       </div>
                   </div>
                   <div class="step pass-bg">
-                    <span>Then User search on google page</span>
-      <div>Piyush is searched
+                    <span>Then user validates the title of the page</span>
+      <div>
       </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When user clicks on "MyAccount" on "opencart_Mainpage" page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And user clicks on "Login" on "opencart_Mainpage" page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then user enters "piyushrajgupta@outlook.com" in element "Email" on "opencart_Mainpage" page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then user enters "Piyush@1988" in element "Password" on "opencart_Mainpage" page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And user clicks on "LoginButton" on "opencart_Mainpage" page</span>
       <div>
       </div>
                   </div>
@@ -343,12 +366,12 @@ eventsCount: 5,
 <span class="meta">
 <span class='badge log pass-bg'>1</span>
 </span>
-<p class="name">@test</p>
+<p class="name">@opencart</p>
 <p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>@test</h4>
+<h4>@opencart</h4>
 <span status="pass" class='badge log pass-bg'>1 passed</span>
 </div>
 <table class='table table-sm mt-4'>
@@ -362,11 +385,11 @@ eventsCount: 5,
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>00:45:08 AM</td>
+<td>01:10:21 AM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='3'>Google search</a>
+<a href="#" class="linked" test-id='1' id='3'>Validate Login in open cart</a>
 <div class="">
-<span class="badge badge-default">Google Functionality.Google search</span>
+<span class="badge badge-default">Opencart main page validations..Validate Login in open cart</span>
 </div>
 </td>
 </tr>

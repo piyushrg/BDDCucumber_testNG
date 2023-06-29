@@ -1,18 +1,16 @@
-package runnerPkg;
+package comm.runner;
 
 import io.cucumber.testng.*;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 @CucumberOptions(
         features = {"src/test/java/FeatureFiles"},
-        glue = {"com/pkg/stepDefination","com/pkg/Hooks"},
-        tags = "@test",
+        glue = {"comm/stepDefinations","comm/runner"},
+        tags = "@opencart",
         plugin = {"pretty","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 )
-public class runnerClass {
+public class Runner  {
+
     private TestNGCucumberRunner testNGCucumberRunner;
 
     @BeforeClass

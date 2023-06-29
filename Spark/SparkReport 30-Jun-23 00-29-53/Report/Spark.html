@@ -1,0 +1,581 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title></title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa bdd-report standard">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary"></span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Jun 30, 2023 12:29:53 AM</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('category-view')">
+<a id="nav-category" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-tag"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Jun 30, 2023 12:29:53 AM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Jun 30, 2023 12:30:25 AM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Features Passed</p>
+<h3>1</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Features Failed</p>
+<h3>0</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Features</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='100%'>
+<b>1</b> features passed
+</small>
+</div>
+<div>
+<small data-tooltip='0%'><b>0</b> features failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Scenarios</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='child-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='100%'><b>2</b> scenarios passed</small></div>
+<div>
+<small data-tooltip='0%'><b>0</b> scenarios failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Steps</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='grandchild-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='100%'><b>9</b> steps passed</small></div>
+<div>
+<small data-tooltip='0%'><b>0</b> steps failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"Google Functionality":30.738
+};
+</script>
+<div class="row">
+<div class="col-lg-6 col-md-12 category-container">
+<div class="card">
+<div class="card-header"><p>Tags</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
+<tr>
+<td>@test</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="col-lg-6 col-md-12 sysenv-container">
+<div class="card">
+<div class="card-header"><p>System/Environment</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Value</th></tr></thead>
+<tbody>
+<tr>
+<td>AppName</td>
+<td>Practise</td>
+</tr>
+<tr>
+<td>user</td>
+<td>piyush</td>
+</tr>
+<tr>
+<td>os</td>
+<td>windows</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 1,
+failParent: 0,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 2,
+failChild: 0,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 9,
+failGrandChild: 0,
+warningGrandChild: 0,
+skipGrandChild: 0,
+infoGrandChild: 0,
+eventsCount: 5,
+};
+</script><div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
+<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">@test</a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="pass" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Google Functionality</p>
+            <p class="text-sm">
+              <span>12:29:55 AM</span> / <span>00:00:30:738</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Google Functionality</h5>
+<span class='badge badge-success'>06.30.2023 12:29:55 AM</span>
+<span class='badge badge-danger'>06.30.2023 12:30:25 AM</span>
+<span class='badge badge-default'>00:00:30:738</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Google search</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="3"><span class="badge log pass-bg mr-2">Pass</span>Google search</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>comm.runner.Hooks.before()</span>
+      <div>Chrome browser opened
+      </div>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given User launches "https://www.google.com"</span>
+      <div>https://www.google.com is opened
+      </div>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then user "search" on "googleSearchpage" page</span>
+      <div>User searches for Piyush
+      </div>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And user clicks on "news" on "googleSearchpage" page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And user stores all the "headlines" on "googleSearchpage" page in report</span>
+      <div>TCS bags contract to run, maintain Government eMarketplace: Piyush Goyal
+      </div>
+      <div>Piyush Goyal asks bankers to ensure enhanced, affordable credit to MSME exporters
+      </div>
+      <div>Piyush Goyal chairs a meeting of bankers on export credit to MSME exporters aiming to meet USD 1 trillion merchandise exports
+      </div>
+      <div>Piyush Goyal to banks: Ensure affordable credit access to MSME exporters to achieve $1T export target
+      </div>
+      <div>LIVE: Piyush Goyal asks bankers to ensure 'affordable credit' to MSMEs
+      </div>
+      <div>Comm Min Asks PLI Scheme Implementing Ministries To Hold Consultations With Companies On Their Issues
+      </div>
+      <div>Piyush Goyal to Grace 2nd Technology Conference on Plastic Industry, Focusing on India’s Self-Reliance Ambitions
+      </div>
+      <div>PM Modi congratulates GeM India's top performers for remarkable contributions
+      </div>
+      <div>Ensure affordable credit to MSMEs to achieve $1 tn merchandise exports target: Piyush Goyal
+      </div>
+      <div>Govt committed to provide conducive business environment for PLI sectors: Piyush Goyal
+      </div>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="10"><span class="badge log pass-bg mr-2">Pass</span>Google News</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="11"><span class="badge log pass-bg mr-2">Pass</span>Google News</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>comm.runner.Hooks.before()</span>
+      <div>Chrome browser opened
+      </div>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given User launches "https://news.google.com"</span>
+      <div>https://news.google.com is opened
+      </div>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And user clicks on "NewsRegion" on "googleNews" page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And user stores all the "headlines" on "googleNews" page in report</span>
+      <div>
+      </div>
+      <div>Drama in Manipur: Rahul Gandhi visits Churachandpur camps by chopper as police halt convoy midway
+      </div>
+      <div>BJP organisational reboot, cabinet reshuffle on cards? What’s behind top rung’s flurry of meetings
+      </div>
+      <div>Tamil Nadu governor dismisses Senthil Balaji from council of ministers; Stalin says governor has no power
+      </div>
+      <div>Madhya Pradesh: PhonePe warns Congress of legal action over posters targeting CM Shivraj Singh Chouhan
+      </div>
+      <div>At Least One Dead, Two Injured After Firing Between ‘Armed Rioters’ and Indian Army: Reports
+      </div>
+      <div>Why now after 9 years, is it due to 2024: Kapil Sibal's dig at PM Modi over UCC remarks
+      </div>
+      <div>उपमुख्यमंत्री बनते ही पहला काम क्या करेंगे? जानिए TS सिंहदेव ने मीडिया के इस सवाल पर क्या कहा?
+      </div>
+      <div>Very Heavy Rains to Continue Over Maharashtra Until July 3 | Weather.com
+      </div>
+      <div>MK Stalin condemns ‘murderous’ attack on Bhim Army Chief Chandrashekhar Azad
+      </div>
+      <div>Five Misleading Claims Made By The Congress On India-US Deal For MQ-9B Drones
+      </div>
+      <div>Egypt's Paeans to Narendra Modi Cannot Erase the Past or Present in India
+      </div>
+      <div>Caught on cam: Structure of under-construction bridge in Chhattisgarh collapses during rains
+      </div>
+      <div>India's ties with Russia remains steady, despite 'turbulence', says Jaishankar | WION World DNA
+      </div>
+      <div>Rain accompained by strong winds lashes parts of Delhi-NCR, orange alert issued
+      </div>
+      <div>'Mob Attacked Us': Tensions in Mumbai Society Over Family Bringing Goats for Eid
+      </div>
+      <div>TS Singhdeo Appointed as Deputy CM of Chhattisgarh: Promises Fulfilled?
+      </div>
+      <div>Ensure no illegal slaughter of animals in south Mumbai housing society on Bakrid: Bombay HC to BMC
+      </div>
+      <div>[Exclusive] Supreme Court to introduce new roster system based on domain expertise of judges from July 3
+      </div>
+      <div>Denied grain by Centre, Karnataka government to compensate BPL families with cash
+      </div>
+      <div>Tomatoes at Rs 100/kg, Punjab farmers remain losers
+      </div>
+      <div>Mumbai rains: Two killed, 26 incidents of tree fall and 15 of short-circuit, says BMC
+      </div>
+      <div>Mumbai: Lake levels in seven reservoirs that supply water to city at 8.94 per cent
+      </div>
+      <div>India’s 23rd Vande Bharat Express receives good response from rail passengers – Know its routes, frequency, stoppages, distance and significance
+      </div>
+      <div>In Response To DMK Govt's Chidambaram Temple Take Over Plans, Annamalai Says It Will Face Consequences For Going Against Hindus And Court Judgements
+      </div>
+      <div>LIVE | Nagaland State Lottery Sambad Result 29.06.2023 (OUT): Dear Sandpiper Night 8 PM Thursday Luc
+      </div>
+      <div>TS ICET 2023 results announced @ icet.tsche.ac.in; Direct link here
+      </div>
+      <div>JoSAA Counselling 2023: Registration, choice filling ends today, apply here
+      </div>
+      <div>Bahuda Yatra 2023 LIVE Updates Suna Besha Sibling deities of Puri Srimandir set to dazzle in golden avatar today Odisha TV
+      </div>
+      <div>‘Compulsory attendance, black clothes discouraged’: How some DU colleges are prepping for Modi visit
+      </div>
+      <div>New Delhi Is Adopting the Singapore Model for Military-Industrial Relations with the US
+      </div>
+      <div>Couple vs older women in Delhi Metro over 'standing too close', Twitter joins debate. Watch
+      </div>
+      <div>Uddhav Thackeray's Sena faction won't win more than five seats in 2024 Maha Assembly polls: Narayan Rane
+      </div>
+      <div>Plan For 2024 Polls, Reshuffle Discussed At Late-Night BJP Meet: Sources
+      </div>
+      <div>Chandrayaan-3: A look at the space mission that may launch on July 13
+      </div>
+      <div>7 dead, 18 injured as chariot catches fire during Rath Yatra procession in Tripura's Unakoti district
+      </div>
+      <div>Muslims celebrate Eid-ul-Adha in Hyderabad
+      </div>
+      <div>Next meeting of opposition parties to be held in Bengaluru on July 13-14, says Sharad Pawar
+      </div>
+      <div>Patchy rains to continue in Delhi NCR, increase around weekend | Skymet Weather Services
+      </div>
+      <div>Judicial officers are frontline warriors: CJI DY Chandrachud lays foundation stone for new High Court complex in Jammu
+      </div>
+      <div>Sharad Pawar confirms negotiations with BJP for 2019 Fadnavis govt formation
+      </div>
+      <div>India's Statistical System: Past, Present, Future
+      </div>
+      <div>Karnataka High Court declines to quash FIR against Congress leaders Rahul Gandhi, Jairam Ramesh & Supriya Shrinate in copyright infringement case
+      </div>
+      <div>White House distances itself from Obama’s comments on India twice in 3 days, official says Obama made the remarks as private citizen
+      </div>
+      <div>Karnataka police register FIR against BJP IT Cell chief Amit Malviya for posting video on social media showing Rahul Gandhi in bad light
+      </div>
+      <div>Pragati Maidan: Police nab 7 for Delhi tunnel heist plotted by debt-ridden deliveryman
+      </div>
+      <div>Rishi Sunak meets Indian entrepreneurs, celebrities at 10 Downing Street. Attendees are...
+      </div>
+      <div>'Fastest U-Turn On UCC': Shehzad Poonawalla Slams AAP Stance On Uniform Civil Code
+      </div>
+      <div>Ravi Kishan's Daughter Joins Defence Forces Under Agnipath Scheme
+      </div>
+      <div>NMC: NExT exam dates and patterns are OUT; Check out the major details inside
+      </div>
+      <div>Monsoon: Rainfall Predicted Across India, IMD Issues Orange, Yellow Alert For Several States
+      </div>
+      <div>Modi Government Sets Up National Research Foundation, Rs 50,000 Crore Fund Over Five Years For R&D
+      </div>
+      <div>UGC approves new guidelines for University-Industry collaborations; Read full details here
+      </div>
+      <div>Supertech chief R K Arora sent to ED custody till July 10
+      </div>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="test-wrapper row view category-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>2</span>
+</span>
+<p class="name">@test</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@test</h4>
+<span status="pass" class='badge log pass-bg'>2 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>00:29:55 AM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='3'>Google search</a>
+<div class="">
+<span class="badge badge-default">Google Functionality.Google search</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>00:30:14 AM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='11'>Google News</a>
+<div class="">
+<span class="badge badge-default">Google Functionality.Google News</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>
